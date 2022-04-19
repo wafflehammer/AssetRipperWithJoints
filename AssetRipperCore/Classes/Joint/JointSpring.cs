@@ -2,7 +2,7 @@
 using AssetRipper.Core.Project;
 using AssetRipper.Yaml;
 
-namespace AssetRipper.Core.Classes.PhysicMaterial
+namespace AssetRipper.Core.Classes.Joint
 {
 	public sealed class JointSpring : IAssetReadable, IYamlExportable
 	{

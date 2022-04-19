@@ -31,6 +31,7 @@ using AssetRipper.Core.Classes.GameObject;
 using AssetRipper.Core.Classes.GraphicsSettings;
 using AssetRipper.Core.Classes.GUIText;
 using AssetRipper.Core.Classes.InputManager;
+using AssetRipper.Core.Classes.Joint; //added for joints
 using AssetRipper.Core.Classes.Light;
 using AssetRipper.Core.Classes.LightingDataAsset;
 using AssetRipper.Core.Classes.LightmapSettings;
@@ -236,11 +237,12 @@ namespace AssetRipper.Core.Parser.Asset
 				ClassIDType.SpriteAtlas => new SpriteAtlas(assetInfo),
 				ClassIDType.StreamingController => new StreamingController(assetInfo),
 				ClassIDType.TerrainLayer => new TerrainLayer(assetInfo),
-				//ClassIDType.FixedJoint => SourceGenerated.AssetFactory.CreateClassId_138(assetInfo, version),
-				//ClassIDType.FixedJoint2D => SourceGenerated.AssetFactory.CreateClassId_255(assetInfo, version),
-				//ClassIDType.HingeJoint => SourceGenerated.AssetFactory.CreateClassId_59(assetInfo, version),
-				//ClassIDType.HingeJoint2D => SourceGenerated.AssetFactory.CreateClassId_233(assetInfo, version),
-				//ClassIDType.ConfigurableJoint => SourceGenerated.AssetFactory.CreateClassId_153(assetInfo, version),
+				ClassIDType.ConfigurableJoint => new ConfigurableJoint(assetInfo),
+				ClassIDType.CharacterJoint => new CharacterJoint(assetInfo),
+				ClassIDType.FixedJoint => new FixedJoint(assetInfo),
+				ClassIDType.HingeJoint => new HingeJoint(assetInfo),
+				ClassIDType.SpringJoint => new SpringJoint(assetInfo),
+				/******2d joints are stupid anyway*******/
 				_ => null,
 			};
 		}

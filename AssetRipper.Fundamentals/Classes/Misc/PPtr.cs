@@ -52,7 +52,7 @@ namespace AssetRipper.Core.Classes.Misc
 			destination.FileIndex = source.FileIndex;
 			destination.PathIndex = source.PathIndex;
 		}
-
+	
 		public static PPtr<T>[] CastArray<T>(IPPtr[] array) where T : IUnityObjectBase
 		{
 			var result = new PPtr<T>[array.Length];
